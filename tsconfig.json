@@ -9,7 +9,8 @@
     "declaration": true,
     "declarationDir": "build/types",
     "outDir": "build/typescript",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "noImplicitAny": true
   },
   "include": [
     "src"
