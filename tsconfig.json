@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "module": "es6",
+    "lib": ["es2018"],
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationDir": "build/types",
+    "outDir": "build/typescript"
+  },
+  "include": [
+    "src"
+  ]
+}

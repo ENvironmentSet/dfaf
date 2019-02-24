@@ -1,0 +1,42 @@
+{
+  "name": "fauto",
+  "version": "0.0.0",
+  "description": "framework based on idea of finite automata",
+  "index": "src/index.ts",
+  "main": "build/lib/index.js",
+  "unpkg": "build/dist/index.js",
+  "module": "build/es/index.js",
+  "types": "build/types/index.d.ts",
+  "keywords": [
+    "reactive programming",
+    "deterministic finite automata",
+    "framework"
+  ],
+  "scripts": {
+    "env:development": "cross-env NODE_ENV=development",
+    "env:production": "cross-env NODE_ENV=production",
+    "env:test": "cross-env NODE_ENV=test",
+    "build": "rollup -c && tsc && rimraf build/typescript",
+    "build:development": "npm run env:development -- npm run build",
+    "build:production": "npm run env:production -- npm run build",
+    "clear": "rimraf build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ENvironmentSet/fauto.git"
+  },
+  "author": "ENvironmentSet <herryseo1@gmail.com> (https://github.com/ENvironmentSet)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ENvironmentSet/fauto/issues"
+  },
+  "homepage": "https://github.com/ENvironmentSet/fauto#readme",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.2.3",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "typescript": "^3.3.3333"
+  }
+}
