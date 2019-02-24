@@ -8,7 +8,8 @@
     "sourceMap": true,
     "declaration": true,
     "declarationDir": "build/types",
-    "outDir": "build/typescript"
+    "outDir": "build/typescript",
+    "downlevelIteration": true
   },
   "include": [
     "src"
