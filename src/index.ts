@@ -23,7 +23,7 @@ export class State<I = any, R extends Action = Action> {
   public constructor(
     public name: string,
     private logic: Logic<I, R>,
-    private externalLinks: Set<externalLink>,
+    private externalLinks: Set<externalLink> = new Set(),
   ) {}
 
   public get externalLinkList(): ReadonlyArray<externalLink> {
