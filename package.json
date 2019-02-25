@@ -1,6 +1,6 @@
 {
   "name": "fauto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "framework based on idea of finite automata",
   "index": "src/index.ts",
   "main": "build/lib/index.js",
