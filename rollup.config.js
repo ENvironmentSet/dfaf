@@ -9,9 +9,13 @@ const outputs = [
   { file: umd, format: 'umd', name },
 ];
 
+const commonOptions = {
+  exports: 'named',
+};
+
 export default {
   input,
-  output: outputs,
+  output: outputs.map(output => ({ ...commonOptions, ...output })),
   plugins: [
     typescript(),
     nodeResolve(),
