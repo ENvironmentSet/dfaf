@@ -12,7 +12,7 @@ fauto is a javascript framework.
 
 * Automata(startState, ...middlewares)
   + add(stateOrLink)
-  + run()
+  + next(input)
 * State(name, logic\[, externalLinks\])
 * Link(source, dest, matcher)
 * type Matcher
