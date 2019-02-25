@@ -11,7 +11,8 @@ fauto is a javascript framework.
 ## API
 
 * Automata(startState, ...middlewares)
-  + add(stateOrArc)
+  + add(stateOrLink)
+  + run()
 * State(name, logic\[, externalLinks\])
 * Link(source, dest, matcher)
 * type Matcher
@@ -20,3 +21,5 @@ fauto is a javascript framework.
   + MetaMatcher(predicate)
 * interface externalLink
 * type middleware
++ Action
+  * Transition
