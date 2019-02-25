@@ -50,7 +50,7 @@ export class Link implements externalLink {
 }
 
 type initializedMiddleware = (returned: Action) => State;
-export type middleware = (next: initializedMiddleware | Automata['resolver']) => initializedMiddleware;
+export type middleware = (next: initializedMiddleware | Automata['resolver'], getCurrentState?: () => State) => initializedMiddleware;
 
 //@TODO: use lazy evaluation for states and links rather than eager one.
 export default class Automata {
@@ -59,6 +59,7 @@ export default class Automata {
   private readonly resolver: (returned: Action) => State;
 
   public constructor(startState: State, middlewares: Array<middleware>) {
+    const getCurrentState = () => this.currentState;
     const resolver: Automata['resolver'] = ({ type, payload }: Action) => {
       if (type === 'transition') {
         const matchedLink: externalLink | undefined = this.currentState.externalLinkList.find(({matcher}) => matcher(payload));
@@ -85,7 +86,7 @@ export default class Automata {
 
     this.currentState = startState;
     this.states = new Map([[startState.name, startState]]);
-    this.resolver = middlewares.reduce((next, middleware) => middleware(next), resolver);
+    this.resolver = middlewares.reduce((next, middleware) => middleware(next, getCurrentState), resolver);
   }
 
   public add(stateOrLink: State | Link): void {
